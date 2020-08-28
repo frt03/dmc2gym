@@ -138,9 +138,9 @@ class DMCWrapper(core.Env):
         self._observation_space.seed(seed)
 
     def step(self, action):
-        assert self._norm_action_space.contains(action)
+        # assert self._norm_action_space.contains(action)
         action = self._convert_action(action)
-        assert self._true_action_space.contains(action)
+        # assert self._true_action_space.contains(action)
         reward = 0
         extra = {'internal_state': self._env.physics.get_state().copy()}
 
